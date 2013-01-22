@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="myapp">
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src = "http://code.angularjs.org/1.0.2/angular.min.js"> </script>
+	<script src="https://raw.github.com/angular-ui/angular-ui/master/build/angular-ui.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src = "js/idea.js"> </script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/ideaapp.css">
+</head>
+<body>
+	<div ng-controller="IdeaCtrl">
+	<h1 align="center">Welcome to Idea Boardz : {{userName}}</h1>
+	<form class = "form-horizontal">
+		<span style= "margin-left:20px;"> <input type = "text" ng-model="FormIdeaText" placeholder = "Got an Idea !!!" > 
+		<button class = "btn btn-small btn-success" ng-click="addIdea();"><i class="icon-plus"></i></button> </span> 
+	</form>
+	<ul ui:sortable ng-model="ideas">
+			<li ng-repeat = "idea in ideas" class = "column"> {{idea.text}} </li>
+	</ul>
+	 
+	 <br/>
+	
+		
+	
+
+</body>	
+</html>
+
