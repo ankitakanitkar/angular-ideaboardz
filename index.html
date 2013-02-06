@@ -10,30 +10,43 @@
 	<link rel="stylesheet" href="css/ideaapp.css">
 </head>
 <body>
-	<div ng-controller="IdeaCtrl">
+	<div class = "mainDiv" ng-controller="IdeaCtrl">
 	<h1 align="center">Welcome to Idea Boardz : {{userName}}</h1>
 	<form class = "form-horizontal">
-		<span style= "margin-left:20px;"> <input type = "text" ng-model="FormIdeaText" placeholder = "Got an Idea !!!" > 
+	<div>
+		<span style= "margin-left:20px; padding-bottom:20px;"> <input type = "text" ng-model="FormIdeaText" placeholder = "Got an Idea !!!" > 
 		<button class = "btn btn-small btn-success" ng-click="addIdea();"><i class="icon-plus"></i></button> </span> 
-	</form>
+	</div>
+	<div class="lightbox" ng-show="lightbox.ideaForm.on">	
+
+		<textarea ng-model = "edittedIdeaText" placeholder = "Enter Text Here!!!"></textarea>
+		<button class = "btn btn-mini btn-primary" ng-click = "updateIdeaText();"><i class = "icon-ok"></i></button>
+		<button class = "btn btn-mini btn-primary" ng-click = "lightbox.close('ideaForm');"><i class = "icon-remove"></i></button>
+
+	</div>	
+	<div>
+	
 	<ul ui:sortable ng-model="ideas">
-			<li ng-repeat = "idea in ideas" class = "column"> 
+			<li ng-repeat = "idea in ideas" class = "cards"> 
 				<div class = "ideatext">
 					{{idea.text}}
 				</div>
-				
-				<div class="vote">
-					<button class= "btn btn-mini btn-link" ng-model = "idea.votes" ng-click = "voteUp(idea);"><i class = "icon-thumbs-up"></i></button> {{idea.votes}} 
+				<div class = "cardfooter">
+					<div class="vote">
+						<button class= "btn btn-mini btn-link" tooltip = "Vote Up" ng-model = "idea.votes" ng-click = "voteUp(idea);"><i class = "icon-thumbs-up"></i></button> {{idea.votes}} 
+					</div>
+					<div class = "editcard">
+						<button class= "btn btn-mini btn-link" ng-model = "idea.text" ng-click = "editCard(idea);"><i class= "icon-edit"></i></button>
+					</div>
 				</div>
-			
 			 </li>
 	</ul>
+	</div>
 	 
-	 <br/>
-	
-		
-	
+	 <br/> <br/>
 
+</div>
+</form>
 </body>	
 </html>
 

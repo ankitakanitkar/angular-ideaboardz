@@ -11,14 +11,22 @@ ul {
 list-style-type: none;
 }
 
-.column {
+.mainDiv{
+  height: 100%;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  float: left;
+  border: none;
+}
+
+.cards{
   height: 100px;
   width: 100px;
   float: left;
   border: none;
-  background-color: #fcf;
-  margin-right: 5px;
-  padding-right: 15px;
+  background-color: #ddf;
+  margin-right: 15px;
   -webkit-border-radius: 10px;
   -ms-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -30,10 +38,15 @@ list-style-type: none;
   cursor: move;
 }
 
-
 .ideatext {
   height : 80px;
-  width : 100px;
+  width : 100%;
+}
+
+.cardfooter{
+  height: 20px;
+  width: 100px;
+  border: none;
 }
 
 
@@ -41,7 +54,25 @@ list-style-type: none;
   height: 20px;
   width: 50px;
   border: none;
+  float: left;
 
+}
+
+.editcard{
+  height: 20px;
+  width: 50px;
+  border: none;
+  float: right;
+  text-align: right;
+}
+
+.lightbox {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.lightbox textarea{
+  margin-left: 20px;
 }
 
 </style>
