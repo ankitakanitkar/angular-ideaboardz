@@ -1,11 +1,11 @@
 var myapp = angular.module('myapp', ['ui']);
 
 myapp.controller('IdeaCtrl', function ($scope,lightBox){
-	$scope.userName = 'Subuanks';
+	$scope.userName = 'Ankita';
 	$scope.lightbox = lightBox;
-	$scope.ideas = [{id: 0 ,text: "Idea 1" , votes: 1, status: true},
-					{id: 1 ,text: "Idea 2" , votes: 0, status: true},
-					{id: 2 ,text: "Idea 3" , votes: 0, status: true}];
+	$scope.ideas = [{id: 0 ,text: "Idea 1" , votes: 1},
+					{id: 1 ,text: "Idea 2" , votes: 0},
+					{id: 2 ,text: "Idea 3" , votes: 0}];
 
 	
 	$scope.removeText = function(){
@@ -19,7 +19,7 @@ myapp.controller('IdeaCtrl', function ($scope,lightBox){
 	}
 	
 	$scope.voteUp = function(element){
-		$scope.ideas[element.id].votes = element.votes + 1;
+		element.votes = element.votes + 1;
 	}
 
 	$scope.editCard = function(element){
